@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: "20.x"
       #Install dependencies, build and lint
+      - run: corepack enable
       - run: yarn install
       - run: yarn build
       - run: yarn lint
