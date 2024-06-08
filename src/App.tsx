@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { TodoItem } from "./component/todo-item";
+import { MainLayout } from "./layout/main-layout";
+import { Todo } from "./types";
 
-function App() {
+const fakeItems: Todo[] = [
+  {
+    id: "0",
+    name: "nexplore test",
+    timestamp: new Date().getTime().toString(),
+  },
+  {
+    id: "1",
+    name: "make lasagna",
+    timestamp: new Date().getTime().toString(),
+  },
+  {
+    id: "2",
+    name: "eat lasagna",
+    timestamp: new Date().getTime().toString(),
+  },
+  {
+    id: "3",
+    name: "test whether longer todo titles are supported",
+    timestamp: new Date().getTime().toString(),
+  },
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainLayout>
+      {fakeItems.map((todo, idx) => (
+        <TodoItem key={idx} item={todo} />
+      ))}
+    </MainLayout>
   );
-}
+};
 
 export default App;
