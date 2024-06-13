@@ -15,7 +15,7 @@ export const getAllTodos = async () => {
 
 /** Deletes a todo by its ID */
 export const deleteTodo = async (id: string) => {
-  const url = `${API_URL}/delete/${40}`;
+  const url = `${API_URL}/delete/${id}`;
   const response = await fetch(url, {
     method: "DELETE",
   });
