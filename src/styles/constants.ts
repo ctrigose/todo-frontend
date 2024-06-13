@@ -5,6 +5,7 @@ export const style = {
     },
     horizontal: 100,
     vertical: 20,
+    small: 5,
   },
   colors: {
     dark: "#0F0A0A",
